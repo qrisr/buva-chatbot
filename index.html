@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toolbox Agenda 2030 Chatbot MVP - Visualisierungen</title>
+    <style>
+        :root {
+            --primary-color: #0066b3;
+            --secondary-color: #8cc63f;
+            --background-color: #ffffff;
+            --text-color: #333333;
+            --light-gray: #f5f5f5;
+            --border-color: #dddddd;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .section {
+            background-color: var(--background-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px var(--shadow-color);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        .section p {
+            margin-bottom: 20px;
+        }
+        
+        .image-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            box-shadow: 0 2px 8px var(--shadow-color);
+        }
+        
+        .image-caption {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .feature-list {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .feature-list li {
+            margin-bottom: 10px;
+        }
+        
+        .highlight-box {
+            background-color: #f0f7e6;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .highlight-box h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        
+        .implementation-steps {
+            counter-reset: step-counter;
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .implementation-steps li {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 20px;
+            counter-increment: step-counter;
+        }
+        
+        .implementation-steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .next-steps {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .next-steps li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .next-steps li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Toolbox Agenda 2030 Chatbot MVP</h1>
+            <p>Visualisierungen und technische Dokumentation</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Übersicht</h2>
+            <p>Diese interaktive Dokumentation bietet eine umfassende visuelle Darstellung des MVP (Minimum Viable Product) für den KI-gestützten Chatbot zur Navigation der Toolbox Agenda 2030. Die Visualisierungen umfassen die Systemarchitektur, den Datenfluss, die Benutzeroberfläche und die Komponenteninteraktionen.</p>
+            
+            <div class="highlight-box">
+                <h3>Hauptmerkmale des MVP-Chatbots</h3>
+                <ul class="feature-list">
+                    <li><strong>Open-Source-Technologie:</strong> Basierend auf n8n als Workflow-Automatisierungsplattform</li>
+                    <li><strong>RAG-Funktionalität:</strong> Retrieval Augmented Generation für präzise, kontextbezogene Antworten</li>
+                    <li><strong>Mehrsprachigkeit:</strong> Unterstützung aller Schweizer Landessprachen (DE, FR, IT) und Englisch</li>
+                    <li><strong>WordPress-Integration:</strong> Nahtlose Einbindung als Widget in bestehende Toolbox-Websites</li>
+                    <li><strong>Barrierefreiheit:</strong> Entwickelt nach modernen Accessibility-Standards</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>1. Architekturdiagramm</h2>
+            <p>Das Architekturdiagramm zeigt die Hauptkomponenten des Chatbot-Systems und deren Beziehungen zueinander. Es bietet einen Überblick über die technische Struktur des MVP.</p>
+            
+            <div class="image-container">
+                <img src="architecture_diagram.png" alt="Architekturdiagramm des Toolbox Agenda 2030 Chatbots">
+                <div class="image-caption">Abbildung 1: Architekturdiagramm mit Benutzeroberfläche, n8n-Workflows und externen Diensten</div>
+            </div>
+            
+            <h3>Hauptkomponenten:</h3>
+            <ul class="feature-list">
+                <li><strong>Benutzeroberfläche:</strong> Chat-Widget, Sprachauswahl, Schnellzugriff-Buttons und Hilfebereich</li>
+                <li><strong>n8n-Workflows:</strong> Webhook-Empfänger, Initialisierungs-Workflow, Intentionserkennung, RAG-Komponente und Mehrsprachigkeitsmanagement</li>
+                <li><strong>Externe Dienste:</strong> OpenAI API (GPT-4o), Vektor-Datenbank für Embeddings und die Toolbox Agenda 2030 Websites</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>2. Datenflussdiagramm</h2>
+            <p>Das Datenflussdiagramm visualisiert, wie Daten durch das System fließen, von der Benutzeranfrage bis zur Antwortgenerierung. Es zeigt die sequentielle Verarbeitung und Transformation der Daten.</p>
+            
+            <div class="image-container">
+                <img src="data_flow_diagram.png" alt="Datenflussdiagramm des Toolbox Agenda 2030 Chatbots">
+                <div class="image-caption">Abbildung 2: Datenflussdiagramm mit nummerierten Verarbeitungsschritten</div>
+            </div>
+            
+            <h3>Hauptdatenflüsse:</h3>
+            <ol class="feature-list">
+                <li><strong>Benutzeranfrage:</strong> Der Benutzer stellt eine Frage über das Chat-Widget</li>
+                <li><strong>Spracherkennung und Intentionserkennung:</strong> Die Anfrage wird analysiert, um die Sprache und die Intention zu erkennen</li>
+                <li><strong>RAG-Prozess:</strong> Bei Suchanfragen werden relevante Dokumente aus der Vektordatenbank abgerufen</li>
+                <li><strong>Antwortgenerierung:</strong> OpenAI generiert eine kontextbezogene Antwort basierend auf den relevanten Dokumenten</li>
+                <li><strong>Hintergrundprozesse:</strong> Extraktion von Inhalten aus den Toolbox-Websites und Generierung von Embeddings</li>
+            </ol>
+        </div>
+        
+        <div class="section">
+            <h2>3. Benutzeroberflächen-Mockup</h2>
+            <p>Das UI-Mockup zeigt das Design und die Funktionalität des Chatbots aus Benutzerperspektive. Es demonstriert sowohl die Desktop- als auch die Mobile-Ansicht des Chatbots.</p>
+            
+            <div class="image-container">
+                <img src="ui_mockup_html_2025-04-26_11-54-43_8069.webp" alt="UI-Mockup des Toolbox Agenda 2030 Chatbots">
+                <div class="image-caption">Abbildung 3: Benutzeroberflächen-Mockup mit Desktop- und Mobile-Ansicht</div>
+            </div>
+            
+            <h3>Hauptelemente:</h3>
+            <ul class="feature-list">
+                <li><strong>Chat-Widget:</strong> Mit Nachrichtenverlauf und Eingabefeld</li>
+                <li><strong>Sprachauswahl:</strong> Für alle Schweizer Landessprachen (DE, FR, IT) und Englisch</li>
+                <li><strong>Schnellzugriff-Buttons:</strong> Für häufige Fragen</li>
+                <li><strong>Hilfebereich:</strong> Mit Nutzungshinweisen</li>
+                <li><strong>Responsives Design:</strong> Optimiert für Desktop, Tablet und Smartphone</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <h3>Barrierefreiheit</h3>
+                <p>Die Benutzeroberfläche wurde unter Berücksichtigung von Barrierefreiheitsstandards entwickelt:</p>
+                <ul>
+                    <li>Tastaturnavigation für alle Funktionen</li>
+                    <li>ARIA-Attribute für Screenreader-Kompatibilität</li>
+                    <li>Ausreichender Farbkontrast (WCAG AA-konform)</li>
+                    <li>Fokus-Indikatoren für Tastaturbenutzer</li>
+                    <li>Responsive Design für alle Geräte</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>4. Komponenteninteraktionsdiagramm</h2>
+            <p>Das Komponenteninteraktionsdiagramm zeigt, wie die verschiedenen Komponenten des Systems miteinander interagieren. Es visualisiert die Kommunikationswege und Abhängigkeiten zwischen den Komponenten.</p>
+            
+            <div class="image-container">
+                <img src="component_interaction_diagram.png" alt="Komponenteninteraktionsdiagramm des Toolbox Agenda 2030 Chatbots">
+                <div class="image-caption">Abbildung 4: Komponenteninteraktionsdiagramm mit nummerierten Interaktionen</div>
+            </div>
+            
+            <h3>Hauptinteraktionen:</h3>
+            <ul class="feature-list">
+                <li><strong>Benutzerinteraktionen:</strong> Anfragen stellen, Sprache wählen, Schnellzugriff nutzen, Hilfe öffnen</li>
+                <li><strong>Frontend-Backend-Interaktionen:</strong> Übermittlung von Anfragen und Metadaten an n8n</li>
+                <li><strong>n8n-interne Interaktionen:</strong> Weiterleitung zwischen Workflows basierend auf erkannter Intention</li>
+                <li><strong>Datenverarbeitungsinteraktionen:</strong> Extraktion von Inhalten, Generierung von Embeddings, Ähnlichkeitssuche</li>
+                <li><strong>Antwortgenerierung:</strong> Erstellung kontextbezogener Antworten mit OpenAI und Rückgabe an den Benutzer</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>5. Implementierungshinweise</h2>
+            <p>Für die Implementierung des MVP in Ihrer Umgebung sind folgende Schritte erforderlich:</p>
+            
+            <ol class="implementation-steps">
+                <li>
+                    <strong>n8n-Workflows importieren</strong>
+                    <p>Laden Sie die bereitgestellten Workflow-Definitionen in Ihre n8n-Instanz. Stellen Sie sicher, dass Ihre n8n-Instanz über das Internet erreichbar ist.</p>
+                </li>
+                <li>
+                    <strong>WordPress-Plugin installieren</strong>
+                    <p>Integrieren Sie das Chat-Widget in Ihre Toolbox-Websites. Verwenden Sie dazu das bereitgestellte WordPress-Plugin oder fügen Sie den HTML-Code direkt ein.</p>
+                </li>
+                <li>
+                    <strong>OpenAI API konfigurieren</strong>
+                    <p>Stellen Sie sicher, dass die API-Schlüssel korrekt eingerichtet sind und in den n8n-Umgebungsvariablen hinterlegt werden.</p>
+                </li>
+                <li>
+                    <strong>Datenextraktion durchführen</strong>
+                    <p>Führen Sie den Datenextraktions-Workflow aus, um Inhalte von den Toolbox-Websites zu extrahieren und zu indexieren.</p>
+                </li>
+                <li>
+                    <strong>Testen und Anpassen</strong>
+                    <p>Überprüfen Sie die Funktionalität des Chatbots mit verschiedenen Anfragen und nehmen Sie bei Bedarf Anpassungen vor.</p>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="section">
+            <h2>6. Nächste Schritte</h2>
+            <p>Nach der erfolgreichen Implementierung des MVP können folgende Erweiterungen in Betracht gezogen werden:</p>
+            
+            <ul class="next-steps">
+                <li>
+                    <strong>Verbesserung der thematischen Filterung</strong>
+                    <p>Präzisere Kategorisierung und Matching-Algorithmen für genauere Suchergebnisse.</p>
+                </li>
+                <li>
+                    <strong>Implementierung von Rückfragen</strong>
+                    <p>Bei unklaren Anfragen kann der Chatbot gezielt nachfragen, um die Benutzerintention besser zu verstehen.</p>
+                </li>
+                <li>
+                    <strong>Optimierung der Antwortzeit</strong>
+                    <p>Caching-Mechanismen für häufig gestellte Fragen und Optimierung der RAG-Workflows.</p>
+                </li>
+                <li>
+                    <strong>Erweiterung der Wissensbasis</strong>
+                    <p>Integration weiterer Quellen und Dokumente zur Verbesserung der Antwortqualität.</p>
+                </li>
+                <li>
+                    <strong>Nutzerfeedback-Mechanismus</strong>
+                    <p>Sammlung und Auswertung von Feedback zur kontinuierlichen Verbesserung des Chatbots.</p>
+                </li>
+            </ul>
+            
+            <div class="highlight-box">
+                <h3>Erfolgsmessung</h3>
+                <p>Um den Erfolg des Chatbots zu messen, empfehlen wir die Überwachung folgender Kennzahlen:</p>
+                <ul>
+                    <li>Anzahl der Benutzerinteraktionen</li>
+                    <li>Durchschnittliche Antwortzeit</li>
+                    <li>Anzahl der erfolgreichen vs. nicht erfolgreichen Anfragen</li>
+                    <li>Nutzerzufriedenheit (falls Feedback-Mechanismus implementiert)</li>
+                    <li>Verweildauer auf der Website vor und nach Implementierung des Chatbots</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Toolbox Agenda 2030 Chatbot MVP - Visualisierungspaket</p>
+        </div>
+    </footer>
+</body>
+</html>
